@@ -1,0 +1,184 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.11f1 (99c7afb366b3) revision 10078127'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home Single Language; OS build 19043.1110; Version 2009; 64bit' Language: 'en' Physical Memory: 16226 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.13f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+D:/Game Jam Files/GitHub/July_Jam_2021/GameJam_2021_UnityProject
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+51972
+Successfully changed project path to: D:/Game Jam Files/GitHub/July_Jam_2021/GameJam_2021_UnityProject
+D:/Game Jam Files/GitHub/July_Jam_2021/GameJam_2021_UnityProject
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 88.32 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.11f1 (99c7afb366b3)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.13f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/Game Jam Files/GitHub/July_Jam_2021/GameJam_2021_UnityProject/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1060 (ID=0x1c20)
+    Vendor:   
+    VRAM:     6052 MB
+    Driver:   30.0.14.7111
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.13f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.13f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.13f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56448
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.13f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.002060 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 82.46 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.155 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.003887 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 230.00 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  3.882 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
+Refreshing native plugins compatible for Editor in 0.77 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3773 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 179.0 MB.
+System memory in use after: 179.2 MB.
+
+Unloading 21 unused Assets to reduce memory usage. Loaded Objects now: 4220.
+Total: 5.651600 ms (FindLiveObjects: 0.598200 ms CreateObjectMapping: 0.673000 ms MarkObjects: 4.294900 ms  DeleteObjects: 0.084000 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Scenes/Level_2.unity
+  artifactKey: Guid(726695b76bfcbe447b542188c7253d9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Level_2.unity using Guid(726695b76bfcbe447b542188c7253d9f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f893208ecc95b384959d31c6a8af63d0') in 0.021440 seconds
+  Import took 0.028824 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000282 seconds.
+  path: Assets/Scenes
+  artifactKey: Guid(54f2575ad3a6e8d4998f9af26a118dd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes using Guid(54f2575ad3a6e8d4998f9af26a118dd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '218642e39fb42f3cbba0ba005d64ef5b') in 0.012239 seconds
+  Import took 0.023042 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.484633 seconds.
+  path: Assets/Models
+  artifactKey: Guid(b81b92edb231402489651b1293e9aecd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models using Guid(b81b92edb231402489651b1293e9aecd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '576d08cd9ccb182a6171bf5decaebee5') in 0.007967 seconds
+  Import took 0.016860 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.700334 seconds.
+  path: Assets/Models/Prefabs
+  artifactKey: Guid(a354a7a7c4436654aabb3680e98fbb6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Prefabs using Guid(a354a7a7c4436654aabb3680e98fbb6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff6854cdd6d6a34400897646a872ecfd') in 0.009379 seconds
+  Import took 0.017724 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.054209 seconds.
+  path: Assets/Models/Prefabs/double_sided_wall_01.prefab
+  artifactKey: Guid(99c2078fccc34d644aed171aa633e195) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Prefabs/double_sided_wall_01.prefab using Guid(99c2078fccc34d644aed171aa633e195) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+ -> (artifact id: '60a21fbbd81bc3c1c8892e87d3a36175') in 1.380763 seconds
+  Import took 1.389498 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.549064 seconds.
+  path: Assets/Models/Prefabs/floors
+  artifactKey: Guid(88efe1e8cc4ac0244a23c6d202ccd611) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Prefabs/floors using Guid(88efe1e8cc4ac0244a23c6d202ccd611) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6cd34c091a6b58aed2e24d28f8804af5') in 0.010441 seconds
+  Import took 0.018166 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.055482 seconds.
+  path: Assets/Models/Prefabs/floors/FloorTile_Basic.prefab
+  artifactKey: Guid(722461b336ed1b34cbcb2688a3363fab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Prefabs/floors/FloorTile_Basic.prefab using Guid(722461b336ed1b34cbcb2688a3363fab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b22e77e12fec1e42eac80ec7993385fc') in 0.028144 seconds
+  Import took 0.036695 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000401 seconds.
+  path: Assets/Models/Prefabs/floors/FloorTile_Corner.prefab
+  artifactKey: Guid(e9f623ed182a8274eab8afb59ec6e09a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Prefabs/floors/FloorTile_Corner.prefab using Guid(e9f623ed182a8274eab8afb59ec6e09a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '679b2d52b363d0c4344a23915ffddd15') in 0.034582 seconds
+  Import took 0.042259 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000314 seconds.
+  path: Assets/Models/Prefabs/floors/FloorTile_InnerCorner.prefab
+  artifactKey: Guid(c168b5669986eea4c8506b528afd5bec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Prefabs/floors/FloorTile_InnerCorner.prefab using Guid(c168b5669986eea4c8506b528afd5bec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a895c4110f2e2195f6e84119a2b82d2') in 0.038712 seconds
+  Import took 0.047657 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000236 seconds.
+  path: Assets/Models/Prefabs/floors/FloorTile_Empty.prefab
+  artifactKey: Guid(71ff89e364673ed47a90705b8ee2bac7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Prefabs/floors/FloorTile_Empty.prefab using Guid(71ff89e364673ed47a90705b8ee2bac7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30d8f1650a008fd41c472cd2e34dfac7') in 0.051947 seconds
+  Import took 0.058575 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000239 seconds.
+  path: Assets/Models/Prefabs/floors/FloorTile_Double_Hallway.prefab
+  artifactKey: Guid(73568506ffe7bf549a2e3deb7d274316) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Prefabs/floors/FloorTile_Double_Hallway.prefab using Guid(73568506ffe7bf549a2e3deb7d274316) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '57c2cb6593d061724aa083ef6748176e') in 0.028849 seconds
+  Import took 0.036084 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000250 seconds.
+  path: Assets/Models/Prefabs/floors/FloorTile_Side.prefab
+  artifactKey: Guid(2d3865b464f92244dbd66fadea41abc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Prefabs/floors/FloorTile_Side.prefab using Guid(2d3865b464f92244dbd66fadea41abc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '501eba91523a371c55b2595104842344') in 0.035836 seconds
+  Import took 0.047911 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000293 seconds.
+  path: Assets/Models/Prefabs/floors/FloorTile_Basic2.prefab
+  artifactKey: Guid(20d13be46946a5045a6f0f0967099caa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Models/Prefabs/floors/FloorTile_Basic2.prefab using Guid(20d13be46946a5045a6f0f0967099caa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd651cc4c5b48e873b54dce9e60ccd227') in 0.045365 seconds
+  Import took 0.053038 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
