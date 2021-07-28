@@ -2,13 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using UnityEngine.Experimental.GlobalIllumination;
 
 public class Player_Controller : MonoBehaviour
 {
+    public bool IsSharingEnemyView { set { isSharingEnemyView = value; } }
+
+
     [Tooltip("The lower the value, the higher the player speed")][SerializeField] float playerSpeed = 10;
     
     float m_h = 0, m_v = 0;
     Vector3 vel = Vector3.zero;
+    bool isSharingEnemyView = false;
+
 
     #region component_refs
     Rigidbody rb;
@@ -23,8 +29,12 @@ public class Player_Controller : MonoBehaviour
     public Transform[] GetEnemiesInView { get { return enemiesInRange.ToArray(); } }
 
     [Header("Vision Control")]
+    [SerializeField] float lookDamp = 1f;
+    [Space]
+
     [SerializeField] float viewRadius;
     [Range(0,360)][SerializeField] float viewAngle;
+    [Space]
 
     [SerializeField] LayerMask whatIsEnemy;
     [SerializeField] LayerMask whatIsWorld;
@@ -37,8 +47,16 @@ public class Player_Controller : MonoBehaviour
     [SerializeField] private MeshFilter meshFilter;
     #endregion
 
+    #region lighting_setup
+    [Header("Lighting Setup")]
+    [SerializeField] Light lightSource;
+    #endregion
+
     private void Start()
     {
+        lightSource.spotAngle = viewAngle + 10;
+        lightSource.innerSpotAngle = 91;
+
         mesh = new Mesh();
         mesh.name = "vision mesh";
         meshFilter.mesh = mesh;
@@ -46,6 +64,7 @@ public class Player_Controller : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         camera = Camera.main;
         StartCoroutine(FindTargetsWithDelay(.2f));
+        StartCoroutine(LightAdjustOverTime(.25f, 3));
     }
 
     private void Update()
@@ -53,8 +72,16 @@ public class Player_Controller : MonoBehaviour
         m_h = Input.GetAxisRaw("Horizontal");
         m_v = Input.GetAxisRaw("Vertical");
 
+
         Vector3 mousePos = camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, camera.transform.position.y));
-        transform.LookAt(mousePos + Vector3.up * transform.position.y);
+
+        Vector3 targetDir = mousePos - transform.position;
+        Quaternion dir = Quaternion.LookRotation(targetDir);
+        Quaternion quat = Quaternion.Lerp(transform.rotation, dir, lookDamp * Time.deltaTime);
+
+        transform.eulerAngles = new Vector3(0, quat.eulerAngles.y, 0);
+
+        //transform.LookAt(mousePos + Vector3.up * transform.position.y);
         DrawVisionMesh();
     }
 
@@ -68,6 +95,46 @@ public class Player_Controller : MonoBehaviour
         }
         
     }
+
+    #region publics
+    public bool CheckPlayerLookingAtEnemy(Transform enemy)
+    {
+        foreach (Transform e in enemiesInRange)
+        {
+            if (e == enemy)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+    #endregion
+
+    #region dynamic_light_system_management
+    IEnumerator LightAdjustOverTime(float interval, float lightExpansionRate)
+    {
+        while (true)
+        {
+            while (isSharingEnemyView)
+            {
+                float initialLightRange = lightSource.range;
+                float initialTime = 0;  //left off here...
+                while (lightSource.range != initialLightRange + lightExpansionRate)
+                {
+                    lightSource.range += Mathf.Lerp(lightSource.range, initialLightRange + lightExpansionRate, 10 * Time.deltaTime);
+                    
+                    yield return null;
+                }
+
+                Debug.Log("Making light longer");
+                yield return new WaitForSeconds(interval);
+            }
+            yield return null;
+        }
+        
+    }
+    #endregion
 
     public Vector3 DirFromAngle(float angleInDegrees, bool angleIsGlobal)
     {
@@ -98,6 +165,28 @@ public class Player_Controller : MonoBehaviour
             }
         }
 
+        CheckDirectEyeContact();
+
+    }
+
+    private void CheckDirectEyeContact()
+    {
+        bool initialState = isSharingEnemyView;
+        bool newState = false;
+        foreach (Transform enemy in enemiesInRange)
+        {
+            if (enemy.GetComponent<EnemyVision>())
+            {
+                if (enemy.GetComponent<EnemyVision>().CanSeePlayer)
+                {
+                    newState = true;
+                }
+            }
+        }
+        if (initialState != newState)
+        {
+            isSharingEnemyView = !isSharingEnemyView;
+        }
     }
 
     IEnumerator FindTargetsWithDelay(float delay)
@@ -181,6 +270,7 @@ public class Player_Controller : MonoBehaviour
     }
 }
 
+#if UNITY_EDITOR
 [CustomEditor(typeof(Player_Controller))]
 public class Player_Controller_Editor : Editor
 {
@@ -202,3 +292,4 @@ public class Player_Controller_Editor : Editor
         }
     }
 }
+#endif
