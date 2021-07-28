@@ -56,6 +56,7 @@ public class Player_Controller : MonoBehaviour
     {
         lightSource.spotAngle = viewAngle + 10;
         lightSource.innerSpotAngle = 91;
+        lightSource.range = viewRadius - .4f;
 
         mesh = new Mesh();
         mesh.name = "vision mesh";
@@ -64,7 +65,7 @@ public class Player_Controller : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         camera = Camera.main;
         StartCoroutine(FindTargetsWithDelay(.2f));
-        StartCoroutine(LightAdjustOverTime(.25f, 3));
+        StartCoroutine(LightAdjustOverTime(1, 1,3));
     }
 
     private void Update()
@@ -112,25 +113,35 @@ public class Player_Controller : MonoBehaviour
     #endregion
 
     #region dynamic_light_system_management
-    IEnumerator LightAdjustOverTime(float interval, float lightExpansionRate)
+    IEnumerator LightAdjustOverTime(float interval, float lightExpansionRate, float expansionTime)
     {
         while (true)
         {
-            while (isSharingEnemyView)
+            if (isSharingEnemyView)
             {
+                Debug.Log("Extending Light");
                 float initialLightRange = lightSource.range;
-                float initialTime = 0;  //left off here...
-                while (lightSource.range != initialLightRange + lightExpansionRate)
+                float desiredRange = lightSource.range + lightExpansionRate;
+                float lerp = 0f;
+                Vector3 initialCamPos = camera.transform.position;
+                while (lightSource.range <= desiredRange - .2f)
                 {
-                    lightSource.range += Mathf.Lerp(lightSource.range, initialLightRange + lightExpansionRate, 10 * Time.deltaTime);
-                    
-                    yield return null;
+                    lerp += Time.deltaTime / expansionTime;
+                    float newRange = Mathf.Lerp(lightSource.range, desiredRange, lerp);
+                    lightSource.range = newRange;
+                    viewRadius = lightSource.range + .4f;
+
+                    camera.GetComponent<Camera_Player_Follow>().forceYoffset = Vector3.Lerp(initialCamPos, initialCamPos + new Vector3(0, 1, 0), lerp).y; 
+
+                    yield return new WaitForEndOfFrame();
                 }
 
                 Debug.Log("Making light longer");
                 yield return new WaitForSeconds(interval);
+                yield return new WaitForEndOfFrame();
+                Debug.Log("Finished extending light");
             }
-            yield return null;
+            yield return new WaitForEndOfFrame();
         }
         
     }

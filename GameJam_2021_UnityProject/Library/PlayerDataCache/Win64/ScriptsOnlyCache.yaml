@@ -2,7 +2,6 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - Camera_Player_Follow
-    - EnemyVision
     - Player_Controller
     Unity.RenderPipelines.Core.Runtime.dll:
     - UnityEngine.Rendering.UI.DebugUIHandlerBitField
@@ -35,12 +34,15 @@ ScriptsOnlyBuild:
     - UnityEngine.Rendering.VolumeProfile
     Unity.RenderPipelines.HighDefinition.Editor.dll:
     - UnityEditor.Rendering.HighDefinition.HDProjectSettings
+    - UnityEditor.Rendering.HighDefinition.HDRenderPipelineEditor
     Unity.RenderPipelines.HighDefinition.Runtime.dll:
     - UnityEngine.Rendering.HighDefinition.AmbientOcclusion
     - UnityEngine.Rendering.HighDefinition.Bloom
     - UnityEngine.Rendering.HighDefinition.ContactShadows
+    - UnityEngine.Rendering.HighDefinition.DensityVolume
     - UnityEngine.Rendering.HighDefinition.DiffusionProfileSettings
     - UnityEngine.Rendering.HighDefinition.Exposure
+    - UnityEngine.Rendering.HighDefinition.Fog
     - UnityEngine.Rendering.HighDefinition.HDAdditionalCameraData
     - UnityEngine.Rendering.HighDefinition.HDAdditionalLightData
     - UnityEngine.Rendering.HighDefinition.HDRISky
@@ -48,6 +50,7 @@ ScriptsOnlyBuild:
     - UnityEngine.Rendering.HighDefinition.HDShadowSettings
     - UnityEngine.Rendering.HighDefinition.MotionBlur
     - UnityEngine.Rendering.HighDefinition.RenderPipelineResources
+    - UnityEngine.Rendering.HighDefinition.StaticLightingSky
     - UnityEngine.Rendering.HighDefinition.Tonemapping
     - UnityEngine.Rendering.HighDefinition.VisualEnvironment
     Unity.Rider.Editor.dll:
@@ -71,7 +74,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Toggle
     - UnityEngine.UI.VerticalLayoutGroup
   sceneClasses:
-    Assets/Scenes/Code_Scene.unity:
+    Assets/Scenes/Level_1.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -113,85 +116,99 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1670}
     - Class: 114
-      Script: {instanceID: 1676}
+      Script: {instanceID: 1752}
     - Class: 114
-      Script: {instanceID: 1766}
+      Script: {instanceID: 1842}
     - Class: 114
-      Script: {instanceID: 1844}
+      Script: {instanceID: 1920}
     - Class: 114
-      Script: {instanceID: 2454}
+      Script: {instanceID: 1982}
     - Class: 114
-      Script: {instanceID: 2554}
+      Script: {instanceID: 2160}
     - Class: 114
-      Script: {instanceID: 2640}
+      Script: {instanceID: 2530}
     - Class: 114
-      Script: {instanceID: 2784}
+      Script: {instanceID: 2630}
     - Class: 114
-      Script: {instanceID: 3296}
+      Script: {instanceID: 2860}
     - Class: 114
-      Script: {instanceID: 3430}
+      Script: {instanceID: 3372}
     - Class: 114
-      Script: {instanceID: 3456}
+      Script: {instanceID: 3398}
     - Class: 114
       Script: {instanceID: 3506}
     - Class: 114
-      Script: {instanceID: 3662}
+      Script: {instanceID: 3532}
     - Class: 114
-      Script: {instanceID: 3788}
+      Script: {instanceID: 3582}
     - Class: 114
-      Script: {instanceID: 4136}
+      Script: {instanceID: 3738}
     - Class: 114
-      Script: {instanceID: 4280}
+      Script: {instanceID: 3864}
     - Class: 114
-      Script: {instanceID: 4374}
+      Script: {instanceID: 4212}
     - Class: 114
-      Script: {instanceID: 4644}
+      Script: {instanceID: 4356}
     - Class: 114
-      Script: {instanceID: 5482}
+      Script: {instanceID: 4450}
     - Class: 114
-      Script: {instanceID: 5498}
+      Script: {instanceID: 4720}
     - Class: 114
-      Script: {instanceID: 5568}
+      Script: {instanceID: 5396}
     - Class: 114
-      Script: {instanceID: 5776}
+      Script: {instanceID: 5558}
     - Class: 114
-      Script: {instanceID: 5778}
+      Script: {instanceID: 5574}
     - Class: 114
-      Script: {instanceID: 5800}
+      Script: {instanceID: 5628}
     - Class: 114
-      Script: {instanceID: 6040}
+      Script: {instanceID: 5644}
     - Class: 114
-      Script: {instanceID: 6170}
+      Script: {instanceID: 5852}
     - Class: 114
-      Script: {instanceID: 6316}
+      Script: {instanceID: 5854}
     - Class: 114
-      Script: {instanceID: 6328}
+      Script: {instanceID: 5876}
     - Class: 114
-      Script: {instanceID: 6400}
+      Script: {instanceID: 6116}
     - Class: 114
-      Script: {instanceID: 6408}
+      Script: {instanceID: 6246}
     - Class: 114
-      Script: {instanceID: 6530}
+      Script: {instanceID: 6392}
     - Class: 114
-      Script: {instanceID: 6574}
+      Script: {instanceID: 6404}
     - Class: 114
-      Script: {instanceID: 6620}
+      Script: {instanceID: 6476}
     - Class: 114
-      Script: {instanceID: 6712}
+      Script: {instanceID: 6484}
     - Class: 114
-      Script: {instanceID: 6824}
+      Script: {instanceID: 6592}
     - Class: 114
-      Script: {instanceID: 6964}
+      Script: {instanceID: 6606}
     - Class: 114
-      Script: {instanceID: 7076}
+      Script: {instanceID: 6650}
     - Class: 114
-      Script: {instanceID: 7130}
+      Script: {instanceID: 6696}
     - Class: 114
-      Script: {instanceID: 7792}
+      Script: {instanceID: 6788}
     - Class: 114
-      Script: {instanceID: 8120}
+      Script: {instanceID: 6900}
     - Class: 114
-      Script: {instanceID: 8396}
+      Script: {instanceID: 7040}
+    - Class: 114
+      Script: {instanceID: 7152}
+    - Class: 114
+      Script: {instanceID: 7206}
+    - Class: 114
+      Script: {instanceID: 7868}
+    - Class: 114
+      Script: {instanceID: 7894}
+    - Class: 114
+      Script: {instanceID: 8196}
+    - Class: 114
+      Script: {instanceID: 8354}
+    - Class: 114
+      Script: {instanceID: 8472}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -433,7 +450,7 @@ ScriptsOnlyBuild:
     className: EventSystem
   - hash:
       serializedVersion: 2
-      Hash: b785e97860b9f4ecbaa5a51879d51c04
+      Hash: a2955a9ef183ca8a5872e52ed1959040
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Camera_Player_Follow
@@ -1723,5 +1740,5 @@ ScriptsOnlyBuild:
     className: VFXRaycastBinder
   platform: 19
   scenePathNames:
-  - Assets/Scenes/Code_Scene.unity
+  - Assets/Scenes/Level_1.unity
   playerPath: D:/Unity Builds/Dev/Jam July 2021/GameJam_2021_UnityProject.exe

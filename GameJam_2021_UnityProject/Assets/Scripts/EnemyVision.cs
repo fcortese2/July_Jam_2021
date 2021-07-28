@@ -102,18 +102,18 @@ public class EnemyVision : MonoBehaviour
         {
             if (playerInRange[0].GetComponent<Player_Controller>())
             {
-                Debug.Log("Player visible");
+                //Debug.Log("Player visible");
                 return true;
             }
             else
             {
-                Debug.Log("Player visible");
+                //Debug.Log("Player visible");
                 return false;
             }
         }
         else
         {
-            Debug.Log("Player invisible");
+            //Debug.Log("Player invisible");
             return false;
         }
 
