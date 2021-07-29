@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6706892049715106786}
   - component: {fileID: 7691146910507605063}
   - component: {fileID: 5573351961311766669}
+  - component: {fileID: 1344171977233720426}
   m_Layer: 0
   m_Name: Props_Shelf_Tall
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1344171977233720426
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6221857456211446104}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.020569172, y: 0.008107898, z: 0.031066984}
+  m_Center: {x: 0, y: 0, z: 0.015568573}

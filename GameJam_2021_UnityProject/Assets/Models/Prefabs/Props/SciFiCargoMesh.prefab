@@ -9,7 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 987338994006560076}
-  m_Layer: 0
+  - component: {fileID: 3799700994913059861}
+  m_Layer: 7
   m_Name: SciFiCargoMesh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 502269254768744438}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.0080780005, y: 0.0080780005, z: 0.0080780005}
   m_Children:
@@ -32,6 +33,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3799700994913059861
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502269254768744438}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 110, y: 100, z: 110}
+  m_Center: {x: 0, y: 5, z: 0}
 --- !u!1 &2804921804433848257
 GameObject:
   m_ObjectHideFlags: 0
@@ -43,7 +57,7 @@ GameObject:
   - component: {fileID: 1430366487656690838}
   - component: {fileID: 5249148771874640458}
   - component: {fileID: 8283240604000208190}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: StorageBoxTop_low_StorageBoxTop_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +138,7 @@ GameObject:
   - component: {fileID: 4922595426944412861}
   - component: {fileID: 3907746935086427719}
   - component: {fileID: 166880957020363705}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: StorageBoxCore_low_StorageBoxCore_low
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -14,6 +14,7 @@ public class Player_Controller : MonoBehaviour
     float m_h = 0, m_v = 0;
     Vector3 vel = Vector3.zero;
     bool isSharingEnemyView = false;
+    [SerializeField] Animator animator;
 
 
     #region component_refs
@@ -54,6 +55,7 @@ public class Player_Controller : MonoBehaviour
 
     private void Start()
     {
+
         lightSource.spotAngle = viewAngle + 10;
         lightSource.innerSpotAngle = 91;
         lightSource.range = viewRadius - .4f;
@@ -73,6 +75,8 @@ public class Player_Controller : MonoBehaviour
         m_h = Input.GetAxisRaw("Horizontal");
         m_v = Input.GetAxisRaw("Vertical");
 
+        animator.SetFloat("h", m_h);
+        animator.SetFloat("v", m_v);
 
         Vector3 mousePos = camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, camera.transform.position.y));
 

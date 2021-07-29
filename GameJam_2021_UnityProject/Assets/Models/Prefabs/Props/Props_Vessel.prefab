@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8118705607821638393}
   - component: {fileID: 5117413164922778972}
   - component: {fileID: 6980653505815101846}
+  - component: {fileID: 4230426983975808818}
   m_Layer: 0
   m_Name: Props_Vessel
   m_TagString: Untagged
@@ -83,3 +84,16 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4230426983975808818
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8926344540455854147}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0028730996, y: 0.0028730975, z: 0.0077054654}
+  m_Center: {x: -5.820766e-10, y: -1.164153e-10, z: 0.0038277705}

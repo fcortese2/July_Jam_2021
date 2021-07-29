@@ -1538,12 +1538,12 @@ Transform:
   - {fileID: 1904973470}
   - {fileID: 1713271057}
   - {fileID: 153592375}
+  - {fileID: 1161526013}
   - {fileID: 1218236172}
   - {fileID: 1773180665}
-  - {fileID: 1161526013}
+  - {fileID: 1643203828}
   - {fileID: 840658998}
   - {fileID: 1484809495}
-  - {fileID: 1643203828}
   m_Father: {fileID: 942156569}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
