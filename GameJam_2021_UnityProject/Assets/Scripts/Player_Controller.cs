@@ -242,7 +242,7 @@ public class Player_Controller : MonoBehaviour
         {
             timer += .2f;
             //noticeSlider.value = timer;
-            if (noticeSlider.value >= 1.95f)
+            if (noticeSlider.value >= .95f)
             {
                 Die();
             }
@@ -260,7 +260,7 @@ public class Player_Controller : MonoBehaviour
     {
         while (true)
         {
-            noticeSlider.value = Mathf.Lerp(noticeSlider.value, timer, 5 * Time.deltaTime);
+            noticeSlider.value = Mathf.Lerp(noticeSlider.value, timer, 10 * Time.deltaTime);
 
             yield return new WaitForEndOfFrame();
         }

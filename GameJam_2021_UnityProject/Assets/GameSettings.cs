@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class GameSettings : MonoBehaviour
 {
     public float gammaPercentage = 5;
     public float volumePercentage = 50;
-
+    public AudioMixerGroup mixer;
 
     private static GameSettings _instance;
     public static GameSettings Instance { get { return _instance; } }
@@ -38,6 +39,7 @@ public class GameSettings : MonoBehaviour
         {
             GameObject.Find("Directional Light").GetComponent<Light>().intensity = (.06f * (gammaPercentage / 5f));
         }
+
         
     }
 

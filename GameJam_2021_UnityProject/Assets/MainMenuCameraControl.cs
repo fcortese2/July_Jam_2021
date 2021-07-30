@@ -17,6 +17,11 @@ public class MainMenuCameraControl : MonoBehaviour
     int normalFontSize = 25;
     int selectedFontSize = 40;
 
+    void Start()
+    {
+        Cursor.visible = true;
+    }
+
     public void PlayGame()
     {
         SceneManager.LoadSceneAsync("Tutorial");

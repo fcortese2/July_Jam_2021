@@ -10,6 +10,14 @@ public class AutoLoadAfter : MonoBehaviour
         StartCoroutine(AutoStart(28));
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("Level_1");
+        }
+    }
+
     IEnumerator AutoStart(float t)
     {
         yield return new WaitForSeconds(t);

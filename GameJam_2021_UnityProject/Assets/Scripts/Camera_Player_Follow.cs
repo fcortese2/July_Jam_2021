@@ -12,6 +12,7 @@ public class Camera_Player_Follow : MonoBehaviour
     private void Awake()
     {
         forceYoffset = followOffset.y;
+        Cursor.visible = false;
     }
 
     private void FixedUpdate()
