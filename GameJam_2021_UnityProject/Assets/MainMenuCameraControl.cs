@@ -19,7 +19,7 @@ public class MainMenuCameraControl : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadSceneAsync("Level_1");
+        SceneManager.LoadSceneAsync("Tutorial");
     }
 
     public void QuitGame()

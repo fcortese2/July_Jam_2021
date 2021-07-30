@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using UnityEngine.Experimental.GlobalIllumination;
+using UnityEngine.UI;
 
 public class Player_Controller : MonoBehaviour
 {
@@ -53,8 +54,20 @@ public class Player_Controller : MonoBehaviour
     [SerializeField] Light lightSource;
     #endregion
 
+    #region audio_setup
+    [Header("Audio Setup")]
+    [SerializeField] AudioSource footstepSource;
+    #endregion
+
+    #region UI_setup
+    [Header("UI Setup")]
+    [SerializeField] Slider noticeSlider;
+    #endregion
+
     private void Start()
     {
+        StartCoroutine(LerpUpdateProgressBar());
+        noticeSlider.value = 0;
 
         lightSource.spotAngle = viewAngle + 10;
         lightSource.innerSpotAngle = 91;
@@ -77,6 +90,23 @@ public class Player_Controller : MonoBehaviour
 
         animator.SetFloat("h", m_h);
         animator.SetFloat("v", m_v);
+
+        if (m_h != 0 || m_v != 0)
+        {
+            if (!footstepSource.isPlaying)
+            {
+                footstepSource.Play();
+            }
+        }
+        else
+        {
+            footstepSource.Stop();
+        }
+
+        if (viewRadius >= 12f)
+        {
+            Die();
+        }
 
         Vector3 mousePos = camera.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, camera.transform.position.y));
 
@@ -184,10 +214,14 @@ public class Player_Controller : MonoBehaviour
 
     }
 
+    bool previousState = false;
+    float timer = 0;
     private void CheckDirectEyeContact()
     {
+
         bool initialState = isSharingEnemyView;
         bool newState = false;
+
         foreach (Transform enemy in enemiesInRange)
         {
             if (enemy.GetComponent<EnemyVision>())
@@ -198,9 +232,37 @@ public class Player_Controller : MonoBehaviour
                 }
             }
         }
+
         if (initialState != newState)
         {
             isSharingEnemyView = !isSharingEnemyView;
+        }
+
+        if (isSharingEnemyView == previousState && isSharingEnemyView == true)
+        {
+            timer += .2f;
+            //noticeSlider.value = timer;
+            if (noticeSlider.value >= 1.95f)
+            {
+                Die();
+            }
+        }
+        else
+        {
+            //noticeSlider.value = 0;
+            timer = 0;
+        }
+
+        previousState = isSharingEnemyView;
+    }
+
+    IEnumerator LerpUpdateProgressBar()
+    {
+        while (true)
+        {
+            noticeSlider.value = Mathf.Lerp(noticeSlider.value, timer, 5 * Time.deltaTime);
+
+            yield return new WaitForEndOfFrame();
         }
     }
 
@@ -282,6 +344,11 @@ public class Player_Controller : MonoBehaviour
             dist = _dist;
             angle = _angle;
         }
+    }
+
+    public void Die()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadSceneAsync("MainMenu");
     }
 }
 
